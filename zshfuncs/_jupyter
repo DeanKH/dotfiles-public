@@ -1,0 +1,9 @@
+#!/usr/bin/env zsh
+compdef _jupyter jupyter
+
+_jupyter(){
+	_values \
+	'command'\
+	'notebook'
+}
+

@@ -1,0 +1,17 @@
+# Command history search by percol
+#valid in 1000 words
+function _replace_by_history() {
+    l=$(HISTTIMEFORMAT= history 0 | sort -k1,1nr | awk '{print substr($0,index($0,$2),1000)}' | percol --query "$LBUFFER")
+    LBUFFER="$l"
+		zle -R -c
+}
+zle -N percol_history _replace_by_history
+bindkey  '^r' percol_history
+
+# ROS topic selecter by percol
+function search-rostopic-by-percol(){
+	LBUFFER=$LBUFFER$(rostopic list | percol)
+	zle -R -c
+}
+zle -N search-rostopic-by-percol
+bindkey '^[r' search-rostopic-by-percol

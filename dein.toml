@@ -1,0 +1,69 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+[[plugins]]
+repo = 'Shougo/vimproc.vim'
+build = 'make'
+[[plugins]]
+repo = 'thinca/vim-unite-history'
+on_source = 'unite.vim'
+[[plugins]]
+repo = 'vim-jp/cpp-vim'
+on_ft = 'cpp'
+[[plugins]]
+repo = 'cespare/vim-toml'
+[[plugins]]
+repo = 'elzr/vim-json'
+on_ft = 'json'
+[[plugins]]
+repo = 'terryma/vim-multiple-cursors'
+[[plugins]]
+repo = 'altercation/vim-colors-solarized'
+[[plugins]]
+repo = 'Shougo/neocomplete.vim'
+depends=['Shougo/vimproc.vim', 'Shougo/context_filetype.vim']
+on_i  = 1
+[[plugins]]
+repo = 'Shougo/unite.vim'
+[[plugins]]
+repo = 'vim-latex/vim-latex'
+[[plugins]]
+repo = 'tomtom/tcomment_vim'
+[[plugins]]
+repo = 'miyakogi/seiya.vim'
+[[plugins]]
+repo = 'Townk/vim-autoclose'
+[[plugins]]
+repo = 'w0ng/vim-hybrid'
+[[plugins]]
+repo = 'tomasr/molokai'
+[[plugins]]
+repo = 'sickill/vim-monokai'
+[[plugins]]
+repo = "taketwo/vim-ros"
+[[plugins]]
+repo = 'plasticboy/vim-markdown'
+[[plugins]]
+repo = 'iamcco/markdown-preview.vim'
+[[plugins]]
+repo = 'nathanaelkane/vim-indent-guides'
+[[plugins]]
+repo = 'Shougo/neoinclude.vim'
+[[plugins]]
+repo = 'Shougo/context_filetype.vim'
+[[plugins]]
+repo = 'justmao945/vim-clang'
+on_ft = 'cpp'
+[[plugins]]
+repo = 'jkramer/vim-checkbox'
+on_ft = 'md'
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+[[plugins]]
+repo = 'Shougo/neosnippet'
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+[[plugins]]
+repo = 'davidhalter/jedi-vim'
+on_ft = 'py'
+[[plugins]]
+repo = 'airblade/vim-gitgutter'

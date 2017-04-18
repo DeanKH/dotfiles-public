@@ -1,0 +1,33 @@
+#!/usr/bin/env zsh
+
+function _my_roscomplete_search_dir {
+    local words arg opts pkgdir pkgdir_result stack_result
+    reply=()
+		words=(${=BUFFER})
+    pkgdir=`export ROS_CACHE_TIMEOUT=-1.0 && rospack find ${words[2]} 2> /dev/null`
+    pkgdir_result=$?
+		catkin_package_libexec_dir=$(catkin_find --first-only --without-underlays --libexec ${words[2]}) 2> /dev/null
+		stackdir=`export ROS_CACHE_TIMEOUT=-1.0 && rosstack find ${words[2]} 2> /dev/null`
+    stack_result=$?
+    if [[ $pkgdir_result == 0 ]]; then
+        opts=`find $pkgdir $catkin_package_libexec_dir ${=1} -print0 | tr '\000' '\n' | sed -e "s/.*\/\(.*\)/\1/g"`
+    elif [[ $stack_result == 0 ]] ; then
+        opts=`find $stackdir ${=1} -print0 | tr '\000' '\n' | sed -e "s/.*\/\(.*\)/\1/g"`
+    else
+        opts=""
+    fi
+    IFS=$'\n'
+    reply=(${=opts})
+    unset IFS
+}
+
+function _my_roscomplete_exe {
+    local perm
+    if [[ `uname` == Darwin ]]; then
+        perm="+111"
+    else
+        perm="/111"
+    fi
+    _my_roscomplete_search_dir "-follow -type f -perm $perm -regex .*/.*$ ! -path */\.*"
+}
+compctl -f -x 'S[-]' -k '(--debug --prefix)' - 'c[-1,--prefix][-1,-p]' -h '' - 'p[1],c[-1,-d],c[-1,--debug],c[-2,-p],c[-2,--prefix]' -K "_roscomplete" - 'p[2],c[-2,-d],c[-2,--debug],c[-3,-p],c[-3,--prefix]' -K _my_roscomplete_exe -- "rosrun"
