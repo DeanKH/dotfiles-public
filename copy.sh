@@ -15,6 +15,7 @@ echo $repopath
 create_sl $repopath"tmux.conf" $distpath".tmux.conf"
 create_sl $repopath"latexmkrc" $distpath".latexmkrc"
 create_sl $repopath"dean.clang-format" $distpath".clang-format"
+mkdir $distpath".vim/"
 create_sl $repopath"dein.toml" $distpath".vim/dein.toml"
 
 
@@ -23,11 +24,6 @@ create_sl $repopath"zshfuncs" $distpath".zshfuncs"
 zshpath=$repopath"zshrcs/"
 create_sl $zshpath"common.zshrc" $distpath".zshrc_common"
 create_sl $zshpath"main.zshrc" $distpath".zshrc"
-#hostfile=$(uname -n | tr "[:upper:]" "[:lower:]")
-#check_path=$zshpath$hostfile".zshrc"
-#if [ "$check_path" != "" ] ; then
-#	create_sl $zshpath$hostfile".zshrc" $distpath".zshrc_local"
-#fi
 create_sl $repopath"zpreztorc" $distpath".zpreztorc"
 
 #vim
