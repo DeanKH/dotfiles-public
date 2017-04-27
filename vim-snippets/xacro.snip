@@ -1,0 +1,73 @@
+snippet init
+	<robot name="${1:#:robot_name}" xmlns:xacro="http://www.ros.org/wiki/xacro"> 
+		${2}
+	</robot>
+
+snippet xacro:property
+  <xacro:property name="${1:#:name}" value="${2:#:value}"/>
+
+snippet xacro:include
+  <xacro:include filename="${1:#file_path}"/>
+
+snippet urdf 
+	<robot name="${1}">
+	</robot>
+
+snippet joint
+	<joint name="${1:#:joint_name}" type="${2:#:joint_type}">
+		<parent link="${3:#:parent_link}"/> 
+		<child link="${4:#:child_link}"/> 
+		<origin xyz="${5:#:pos_vector}" rpy="${6:#:orientation}"/>
+		<axis xyz="${7:#:axis_vector}"/>
+	</joint>
+
+snippet box
+  <box size="${1:#:params}"/>
+
+snippet origin
+  <origin xyz="${1:#:pos}" rpy="${2:#:ori}"/>
+
+snippet material
+  <material name="${1:#:material_name}"/>
+
+snippet inertia
+  <inertia
+    ixx="${1:}" ixy="${2:}" ixz="${3:}"
+    iyy="${4:}" iyz="${5:}"
+    izz="${6:}"/>
+
+snippet link 
+	<link name="${1:#:link_name}">
+	<collision>
+    <origin xyz="${2:}" rpy="${3:}"/>
+    <geometry>
+      ${4:}
+    </geometry>
+  </collision>
+
+	<visual>
+    <origin xyz="${2:}" rpy="${3:}"/>
+    <geometry>
+      ${4:}
+    </geometry>  
+    <material name="${5:}"/>
+  </visual>
+
+	<inertial>
+    <origin xyz="${2:}" rpy="${3:}"/>
+    <mass value="${6:}"/>
+    ${7:}
+  </inertial> 
+	</link>
+
+snippet transmission
+  <transmission name="${1:}">
+    <type>${2:}</type>
+    <joint name="${3:}">
+      <hardwareInterface>${4:}</hardwareInterface>
+    </joint>
+    <actuator name="${5:}">
+      <hardwareInterface>${4:}</hardwareInterface>
+      <mechanicalReduction>${6:}</mechanicalReduction>
+    </actuator>
+  </transmission>
