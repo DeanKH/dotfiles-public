@@ -8,11 +8,16 @@ AlignOperands:   true
 AlignTrailingComments: true
 # AlignConsecutiveAssignments: true
 AllowAllParametersOfDeclarationOnNextLine: true
-AllowShortBlocksOnASingleLine: true 
-AllowShortCaseLabelsOnASingleLine: true
-AllowShortIfStatementsOnASingleLine: true
-AllowShortLoopsOnASingleLine: true
-AllowShortFunctionsOnASingleLine: All
+# AllowShortBlocksOnASingleLine: true 
+# AllowShortCaseLabelsOnASingleLine: true
+# AllowShortIfStatementsOnASingleLine: true
+# AllowShortLoopsOnASingleLine: true
+# AllowShortFunctionsOnASingleLine: All
+AllowShortBlocksOnASingleLine: false 
+AllowShortCaseLabelsOnASingleLine: false
+AllowShortIfStatementsOnASingleLine: false
+AllowShortLoopsOnASingleLine: false
+AllowShortFunctionsOnASingleLine: Inline 
 AlwaysBreakAfterDefinitionReturnType: false
 AlwaysBreakTemplateDeclarations: true
 AlwaysBreakBeforeMultilineStrings: true
@@ -49,7 +54,8 @@ IndentWidth:     2
 TabWidth:        8
 UseTab:          Never
 # BreakBeforeBraces: Attach
-BreakBeforeBraces: Linux 
+# BreakBeforeBraces: Linux 
+BreakBeforeBraces: Allman 
 SpacesInParentheses: false
 SpacesInSquareBrackets: false
 SpacesInAngles:  false
