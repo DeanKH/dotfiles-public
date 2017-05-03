@@ -30,9 +30,9 @@ zstyle ':prezto:load' pmodule \
   'history' \
   'directory' \
   'spectrum' \
+  'git' \
   'utility' \
   'completion' \
-  'git' \
 	'prompt' \
 	'tmux'
 #
@@ -86,8 +86,10 @@ zstyle ':prezto:module:editor' key-bindings 'vi'
 # Set the prompt theme to load.
 # Setting it to 'random' loads a random theme.
 # Auto set to 'off' on dumb terminals.
-zstyle ':prezto:module:prompt' theme 'sorin'
+
+# zstyle ':prezto:module:prompt' theme 'sorin'
 # zstyle ':prezto:module:prompt' theme 'agnoster'
+zstyle ':prezto:module:prompt' theme 'powerline'
 # zstyle ':prezto:module:prompt' theme cloud '>>' 'green' 'red'
 #
 # Ruby
