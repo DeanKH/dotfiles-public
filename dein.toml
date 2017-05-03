@@ -67,3 +67,5 @@ repo = 'davidhalter/jedi-vim'
 on_ft = 'py'
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
+[[plugins]]
+repo = 'cocopon/iceberg.vim'
