@@ -17,7 +17,7 @@ zle -N search-rostopic-by-percol
 bindkey '^[r' search-rostopic-by-percol
 
 function load-catkin-workspace-percol(){
-  lb=$(ls -d $CATKIN_WS_PATH* | percol --query "$LBUFFER")
+  lb=$(ls -d $MY_CATKIN_WS_PATH* | percol --query "$LBUFFER")
   cmd="source "$lb"/devel/setup.zsh"
   LBUFFER=$cmd
 }
