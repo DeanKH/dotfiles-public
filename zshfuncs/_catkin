@@ -47,13 +47,13 @@ _catkin_create(){
 _catkin_build(){
 	IFS_BACKUP=$IFS
 	IFS=':'
-	ws_path=( `echo ${CMAKE_PREFIX_PATH}` )
+	local ws_path=( `echo ${CMAKE_PREFIX_PATH}` )
 	IFS=$IFS_BACKUP
-	rel_path=`echo "${ws_path[1]}/../src/"`
-	abs_path=`readlink -f ${rel_path}`
-	str=()
+	local rel_path=`echo "${ws_path[1]}/../src/"`
+	local abs_path=`readlink -f ${rel_path}`
+	local str=()
 	for file in `\find "${abs_path}" -maxdepth 1 -type d | grep -v "\/\."`; do
-		tmp=$(basename $file)
+		local tmp=$(basename $file)
 		if [ $tmp != 'src' ]; then
 			str+=$tmp
 		fi
