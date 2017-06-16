@@ -47,3 +47,9 @@ local target_path="${ZDOTDIR:-$HOME}/.zshfuncs"
   fi
 }
 
+() {
+  local target_path="${ZDOTDIR:-$HOME}/.zshrc_rosws"
+  if [[ -e "${target_path}" ]]; then
+    source ${target_path}
+  fi
+}
