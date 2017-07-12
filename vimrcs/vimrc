@@ -46,12 +46,12 @@ endif
 "" colorscheme setting
 set background=dark
 autocmd ColorScheme * highlight LineNr ctermfg=35
-" let g:hybrid_reduced_contrast = 1
-" colorscheme hybrid
-colorscheme monokai
+let g:hybrid_reduced_contrast = 1
+colorscheme hybrid
+" colorscheme monokai
 " colorscheme iceberg
 " colorscheme solarized 
-let g:solarized__termcolors=256
+let g:solarized_termcolors=256
 let &colorcolumn=join(range(81,82),",")
 let g:seiya_auto_enable=1
 "

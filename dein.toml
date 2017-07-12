@@ -69,3 +69,11 @@ on_ft = 'py'
 repo = 'airblade/vim-gitgutter'
 [[plugins]]
 repo = 'cocopon/iceberg.vim'
+[[plugins]]
+repo = 'tpope/vim-surround'
+[[plugins]]
+repo = 'rhysd/vim-clang-format'
+[[plugins]]
+repo = 'kana/vim-operator-user'
+[[plugins]]
+repo = 'octol/vim-cpp-enhanced-highlight'

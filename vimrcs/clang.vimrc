@@ -13,13 +13,14 @@ let splited[-1] = join([splited[-1], "/.."], '')
 
 " 'Shougo/neocomplete.vim' {{{
 function! s:cpp()
-	let hog = s:ros_include() 
 	nmap <C-k> :execute ":%! clang-format-3.8"<cr>
 
-	setlocal path+=/usr/include,/usr/local/include,/usr/include/c++/5
+	setlocal path+='/usr/include/','/usr/local/include/','/usr/include/c++/5.4.0/'
 
 	" nmap <C-k> execute ':%! clang-format-3.8'
 	let g:neocomplete#enable_at_startup = 1
+  let g:clang_complete_copen=1
+  let g:clang_hl_errors=1
 
 	if !exists('g:neocomplete#force_omni_input_patterns')
 		let g:neocomplete#force_omni_input_patterns = {} 
@@ -68,14 +69,16 @@ function! s:cpp()
 			set colorcolumn=80
 			" highlight ColorColumn ctermbg=dark
 	endif
+	let hog = s:ros_include() 
 endfunction
 " }}}
 
 
 let g:clang_cpp_options = '-std=c11'
 let g:clang_cpp_options = '-std=c++14'
-" augroup vimrc-cpp
-" 	autocmd!
-" 	autocmd FileType cpp call s:cpp()
-" augroup END
+
+augroup vimrc-cpp
+	autocmd!
+	autocmd FileType cpp call s:cpp()
+augroup END
 
