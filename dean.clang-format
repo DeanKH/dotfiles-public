@@ -24,7 +24,7 @@ AlwaysBreakBeforeMultilineStrings: true
 BreakBeforeBinaryOperators: NonAssignment 
 BreakBeforeTernaryOperators: true
 BreakConstructorInitializersBeforeComma: false
-BinPackParameters: true
+BinPackParameters: false 
 BinPackArguments: true
 ColumnLimit:     80
 ConstructorInitializerAllOnOneLineOrOnePerLine: true
