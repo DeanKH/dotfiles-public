@@ -34,7 +34,8 @@ zstyle ':prezto:load' pmodule \
   'utility' \
   'completion' \
 	'prompt' \
-	'tmux'
+	'syntax-highlighting' \
+	'tmux' 
 #
 # Editor
 #
@@ -120,13 +121,14 @@ zstyle ':prezto:module:prompt' theme 'powerline'
 #
 
 # Set syntax highlighters.
+zstyle ':prezto:module:syntax-highlighting' color 'yes'
 # By default, only the main highlighter is enabled.
-# zstyle ':prezto:module:syntax-highlighting' highlighters \
-#   'main' \
-#   'brackets' \
-#   'pattern' \
-#   'cursor' \
-#   'root'
+zstyle ':prezto:module:syntax-highlighting' highlighters \
+  'main' \
+  'brackets' \
+  'pattern' \
+  'cursor' \
+  'root'
 #
 # Set syntax highlighting styles.
 # zstyle ':prezto:module:syntax-highlighting' styles \
