@@ -12,6 +12,8 @@ set showcmd
 set nobackup
 set clipboard=unnamed,autoselect 
 set infercase
+set spell 
+set spelllang=en,cjk
 " set pumheight=11
 set showmatch
 set matchtime=1
