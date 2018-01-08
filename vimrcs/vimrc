@@ -47,15 +47,18 @@ endif
 
 "" colorscheme setting
 set background=dark
-autocmd ColorScheme * highlight LineNr ctermfg=35
-let g:hybrid_reduced_contrast = 1
+" autocmd ColorScheme * highlight LineNr ctermfg=35
+" let g:hybrid_reduced_contrast = 1
 colorscheme hybrid
+" colorscheme elflord
+" colorscheme koehler 
 " colorscheme monokai
+" colorscheme molokai
 " colorscheme iceberg
 " colorscheme solarized 
-let g:solarized_termcolors=256
-let &colorcolumn=join(range(81,82),",")
-let g:seiya_auto_enable=1
+" let g:solarized_termcolors=256
+" let &colorcolumn=join(range(81,82),",")
+" let g:seiya_auto_enable=1
 "
 if filereadable(expand('~/.neocomplete.vimrc'))
 	source ~/.neocomplete.vimrc
