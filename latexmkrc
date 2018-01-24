@@ -13,3 +13,7 @@ $pdf_mode	  = 3; # generates pdf via dvipdfmx
 # Use Skim as a previewer
 #$pdf_previewer    = "open -ga /Applications/Skim.app";
 
+# $aux_dir = "$ENV{HOME}/.tmp/tex/" . basename(getcwd);
+$aux_dir = "build/";
+$out_dir = $aux_dir;
+
