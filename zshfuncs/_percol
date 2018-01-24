@@ -17,8 +17,9 @@ zle -N search-rostopic-by-percol
 bindkey '^[r' search-rostopic-by-percol
 
 function load-catkin-workspace-percol(){
-  local lb=$(ls -d $MY_CATKIN_WS_PATH* | percol --query "$LBUFFER")
-  local cmd="source "$lb"/devel/setup.zsh"
+  local ss="$(echo $MY_CATKIN_WS_PATH*) /opt/ros/kinetic"
+  local lb=$(echo "$ss" |sed -e "s/ /\/devel\n/g" | percol --query "$LBUFFER")
+  local cmd="source "$lb"/setup.zsh"
   if [[ -e "$HOME/.zshrc_rosws" ]]; then
     rm -f $HOME/.zshrc_rosws
   fi

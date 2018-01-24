@@ -1,4 +1,4 @@
-$latex            = 'platex -synctex=1 -halt-on-error';
+$latex            = 'platex -synctex=1 -kanji=utf8 -halt-on-error';
 $latex_silent     = 'platex -synctex=1 -halt-on-error -interaction=batchmode';
 $bibtex           = 'pbibtex';
 $dvipdf           = 'dvipdfmx %O -o %D %S';
