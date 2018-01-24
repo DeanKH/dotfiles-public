@@ -24,6 +24,7 @@ set list
 set listchars=tab:»-,trail:-,extends:»,precedes:«,nbsp:%,eol:↲
 set laststatus=2
 set t_Co=256
+set cursorline
 inoremap jj <Esc>
 
 " Load dein
@@ -51,9 +52,10 @@ colorscheme hybrid
 " colorscheme monokai
 " colorscheme iceberg
 " colorscheme solarized 
+
 let g:solarized_termcolors=256
-let &colorcolumn=join(range(81,82),",")
 let g:seiya_auto_enable=1
+" let &colorcolumn=join(range(81,82),",")
 "
 if filereadable(expand('~/.neocomplete.vimrc'))
 	source ~/.neocomplete.vimrc
