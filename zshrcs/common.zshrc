@@ -9,12 +9,14 @@ alias xcp='xclip -i -selection clipboard'
 alias roscds='roscd && cd ../src'
 alias git-graph='git log --graph --pretty=oneline --abbrev-commit'
 
-# export CATKIN_BUILD_COMPILER="clang++-4.0"
+# export CATKIN_BUILD_COMPILER="clang++-5.0"
 export CATKIN_BUILD_COMPILER="g++-5"
 # alias fin_call="aplay ~/.pronama_voice/kei1/wav/kei_voice_060.wav"
 alias fin_call=""
 alias cb='catkin build -j$(nproc) -DCMAKE_CXX_COMPILER=${CATKIN_BUILD_COMPILER}'
 alias cbr='catkin build -j$(nproc) -DCMAKE_CXX_COMPILER=${CATKIN_BUILD_COMPILER} --cmake-args -DCMAKE_BUILD_TYPE=Release -DRELEASE=1 -DDEBUG=0; fin_call'
+alias cbr2='catkin build -j$(nproc) -DCMAKE_CXX_COMPILER=${CATKIN_BUILD_COMPILER} --cmake-args -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_FLAGS="${CMAKE_CXX_FLAGS} -O2" -DRELEASE=1 -DDEBUG=0; fin_call'
+alias cbrd='catkin build -j$(nproc) -DCMAKE_CXX_COMPILER=${CATKIN_BUILD_COMPILER} --cmake-args -DCMAKE_BUILD_TYPE=RelWithDebInfo -DRELEASE=1 -DDEBUG=0 -DCMAKE_CXX_FLAGS="${CMAKE_CXX_FLAGS} -g" ; fin_call'
 alias cbd='catkin build -j$(nproc) -DCMAKE_CXX_COMPILER=${CATKIN_BUILD_COMPILER} --cmake-args -DCMAKE_BUILD_TYPE=Debug -DRELEASE=0 -DDEBUG=1; fin_call' #&
 # alias cbrc='catkin build -j$(nproc) -DCMAKE_CXX_COMPILER=${CATKIN_BUILD_COMPILER} --cmake-args -DCMAKE_BUILD_TYPE=Release -DRELEASE=1 -DDEBUG=0 -DCMAKE_CXX_FLAGS=-pg -DCMAKE_EXE_LINKER_FLAGS=-pg -DCMAKE_SHARED_LINKER_FLAGS=-pg'
 # alias cbdc='catkin build -j$(nproc) -DCMAKE_CXX_COMPILER=${CATKIN_BUILD_COMPILER} --cmake-args -DCMAKE_BUILD_TYPE=Debug -DRELEASE=0 -DDEBUG=1 -DCMAKE_CXX_FLAGS=-pg -DCMAKE_EXE_LINKER_FLAGS=-pg -DCMAKE_SHARED_LINKER_FLAGS=-pg'
