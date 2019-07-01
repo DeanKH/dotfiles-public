@@ -10,7 +10,7 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-# Source between multi machine setting
+# # Source between multi machine setting
 () {
   local target_path="${ZDOTDIR:-$HOME}/.zshrc_common"
   if [[ -e "${target_path}" ]]; then
@@ -40,16 +40,16 @@ local target_path="${ZDOTDIR:-$HOME}/.zshfuncs"
 }
 
 # Source ROS Master setting
-() {
-  local target_path="${ZDOTDIR:-$HOME}/.zshrc_rosmaster"
-  if [[ -e "${target_path}" ]]; then
-    source ${target_path}
-  fi
-}
-
-() {
-  local target_path="${ZDOTDIR:-$HOME}/.zshrc_rosws"
-  if [[ -e "${target_path}" ]]; then
-    source ${target_path}
-  fi
-}
+# () {
+#   local target_path="${ZDOTDIR:-$HOME}/.zshrc_rosmaster"
+#   if [[ -e "${target_path}" ]]; then
+#     source ${target_path}
+#   fi
+# }
+#
+# () {
+#   local target_path="${ZDOTDIR:-$HOME}/.zshrc_rosws"
+#   if [[ -e "${target_path}" ]]; then
+#     source ${target_path}
+#   fi
+# }
