@@ -27,9 +27,12 @@ create_sl $zshpath"main.zshrc" $distpath".zshrc"
 create_sl $repopath"zpreztorc" $distpath".zpreztorc"
 
 #vim
-vimpath=$repopath"vimrcs/"
-create_sl $vimpath"clang.vimrc" $distpath".clang.vimrc"
-create_sl $vimpath"vimrc" $distpath".vimrc"
-create_sl $vimpath"neocomplete.vimrc" $distpath".neocomplete.vimrc"
-create_sl $vimpath"dein.vimrc" $distpath".dein.vimrc"
+# vimpath=$repopath"vimrcs/"
+# create_sl $vimpath"clang.vimrc" $distpath".clang.vimrc"
+# create_sl $vimpath"vimrc" $distpath".vimrc"
+# create_sl $vimpath"neocomplete.vimrc" $distpath".neocomplete.vimrc"
+# create_sl $vimpath"dein.vimrc" $distpath".dein.vimrc"
 
+#nvim
+nvimpath=$repopath"nvim"
+create_sl $nvimpath $distpath".config/"
