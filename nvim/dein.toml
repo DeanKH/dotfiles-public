@@ -1,0 +1,85 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+hook_add = '''
+let g:deoplete#enable_at_startup = 1
+'''
+
+[[plugins]]
+repo = 'Shougo/denite.nvim'
+[[plugins]]
+repo = 'vim-airline/vim-airline'
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
+[[plugins]]
+repo = 'w0ng/vim-hybrid'
+
+[[plugins]]
+repo = 'neovim/python-client'
+
+[[plugins]]
+repo = 'elzr/vim-json'
+on_ft = 'json'
+
+[[plugins]]
+repo = 'cespare/vim-toml'
+
+[[plugins]]
+repo = 'vim-jp/cpp-vim'
+on_ft = 'cpp'
+
+[[plugins]]
+repo = 'tomasr/molokai'
+[[plugins]]
+repo = 'jonathanfilip/vim-lucius'
+[[plugins]]
+repo = 'tomasr/molokai'
+[[plugins]]
+repo = 'raphamorim/lucario'
+[[plugins]]
+repo = 'jdkanani/vim-material-theme'
+[[plugins]]
+repo = 'jacoborus/tender.vim'
+[[plugins]]
+repo = 'tomtom/tcomment_vim'
+[[plugins]]
+repo = 'vim-latex/vim-latex'
+[[plugins]]
+repo = 'miyakogi/seiya.vim'
+[[plugins]]
+repo = 'rhysd/vim-clang-format'
+[[plugins]]
+repo = 'Shougo/neoinclude.vim'
+[[plugins]]
+repo = 'octol/vim-cpp-enhanced-highlight'
+
+[[plugins]]
+repo = 'autozimu/LanguageClient-neovim'
+rev = 'next'
+depends = ['deoplete.nvim']
+build = 'zsh install.sh'
+hook_add = '''
+let g:LanguageClient_serverCommands = {
+\ 'cpp': ['/usr/local/src/cquery/build/release/bin/cquery', 
+\ '--log-file=/tmp/cq.log', 
+" set cacheDirectory to /var/cquery may cause permission problem on linux
+" set it to /tmp/cquery/ can fix it
+\ '--init={"cacheDirectory":"/tmp/cquery/"}']
+\ }
+
+'''
+# hook_add = '''
+# set hidden
+# let g:LanguageClient_serverCommands = {
+#       \ 'cpp': ['clangd'],
+#       \ }
+# let g:LanguageClient_loadSettings = 1
+#
+# nnoremap K :call LanguageClient#textDocument_hover()<CR>
+# nnoremap F :call LanguageClient#textDocument_formatting()<CR>
+# '''
+hook_source = '''
+set completefunc=LanguageClient#complete
+'''
+
