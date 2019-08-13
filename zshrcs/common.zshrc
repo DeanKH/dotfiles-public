@@ -3,6 +3,7 @@ HISTFILE="${HOME}/.zsh_history"
 HISTSIZE=1000000000
 SAVEHIST=1000000000
 export EDITOR=vim
+export XDG_CONFIG_HOME=$HOME/.config
 alias tmux='tmux -2'
 # alias clang-format='clang-format-3.8'
 alias xcp='xclip -i -selection clipboard'
@@ -31,4 +32,10 @@ alias cbd='catkin build -j$(nproc) -DCMAKE_CXX_COMPILER=${CATKIN_BUILD_COMPILER}
 alias catkin_run_tests='catkin run_tests | grep -E -v "^Linked" | grep -E -v "^make" | grep -E -v "^\[build\]" | grep -v "Finished" | grep -E -v "^\/" | grep -E -v "^cd" | grep -E -v "^Starting" | grep -v "\/" | grep -v "Built"'
 alias gpoc='git push origin $(git branch | grep -e "\*" | sed -e "s/\*\ //")'
 
+# about common app config
 alias rm="trash"
+
+# about TEX
+export TEXINPUTS=$TEXINPUTS:${HOME}/.dotfiles/private/tex/sty/
+export BIBINPUTS=$BIBINPUTS:${HOME}/.dotfiles/private/tex/
+export BSTINPUTS=$BSTINPUTS:${HOME}/.dotfiles/private/tex/
