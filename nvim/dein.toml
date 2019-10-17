@@ -1,3 +1,4 @@
+# Shougo packages
 [[plugins]]
 repo = 'Shougo/dein.vim'
 [[plugins]]
@@ -5,9 +6,32 @@ repo = 'Shougo/deoplete.nvim'
 hook_add = '''
 let g:deoplete#enable_at_startup = 1
 '''
-
 [[plugins]]
 repo = 'Shougo/denite.nvim'
+
+[[plugins]]
+repo = 'roxma/nvim-yarp'
+[[plugins]]
+repo = 'roxma/vim-hug-neovim-rpc'
+[[plugins]]
+repo = 'Shougo/defx.nvim'
+depends = ['roxma/vim-hug-neovim-rpc', 'roxma/nvim-yarp']
+on_cmd = 'Defx'
+hook_add = '''
+	nnoremap <silent> <Space>f :<C-u>Defx -columns=icons:indent:filename:type -listed -resume -buffer-name=tab`tabpagenr()`<CR>
+'''
+[[plugins]]
+repo = 'kristijanhusak/defx-icons'
+
+[[plugins]]
+repo = 'Shougo/deol.nvim'
+
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+hook_add = '''
+  nnoremap <silent> <Space>r : <C-u>QuickRun<CR>
+'''
+
 [[plugins]]
 repo = 'vim-airline/vim-airline'
 [[plugins]]
@@ -53,7 +77,16 @@ repo = 'rhysd/vim-clang-format'
 repo = 'Shougo/neoinclude.vim'
 [[plugins]]
 repo = 'octol/vim-cpp-enhanced-highlight'
+[[plugins]]
+repo = 'dhruvasagar/vim-table-mode'
+on_ft = 'md'
 
+[[plugins]]
+repo = 'sickill/vim-monokai'
+
+[[plugins]]
+repo = 'cocopon/iceberg.vim'
+  
 [[plugins]]
 repo = 'autozimu/LanguageClient-neovim'
 rev = 'next'
@@ -67,18 +100,7 @@ let g:LanguageClient_serverCommands = {
 " set it to /tmp/cquery/ can fix it
 \ '--init={"cacheDirectory":"/tmp/cquery/"}']
 \ }
-
 '''
-# hook_add = '''
-# set hidden
-# let g:LanguageClient_serverCommands = {
-#       \ 'cpp': ['clangd'],
-#       \ }
-# let g:LanguageClient_loadSettings = 1
-#
-# nnoremap K :call LanguageClient#textDocument_hover()<CR>
-# nnoremap F :call LanguageClient#textDocument_formatting()<CR>
-# '''
 hook_source = '''
 set completefunc=LanguageClient#complete
 '''

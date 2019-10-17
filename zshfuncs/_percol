@@ -16,17 +16,17 @@ function search-rostopic-by-percol(){
 zle -N search-rostopic-by-percol
 bindkey '^[r' search-rostopic-by-percol
 
-function load-catkin-workspace-percol(){
-  local ss="$(echo $MY_CATKIN_WS_PATH*) /opt/ros/kinetic"
-  local lb=$(echo "$ss" |sed -e "s/ /\/devel\n/g" | percol --query "$LBUFFER")
-  local cmd="source "$lb"/setup.zsh"
-  if [[ -e "$HOME/.zshrc_rosws" ]]; then
-    rm -f $HOME/.zshrc_rosws
-  fi
-  echo $cmd > $HOME/.zshrc_rosws
-  LBUFFER="${cmd}"
-}
-
-zle -N load-catkin-workspace-percol
-bindkey '^e' load-catkin-workspace-percol 
+# function load-catkin-workspace-percol(){
+#   local ss="$(echo $MY_CATKIN_WS_PATH*) /opt/ros/kinetic"
+#   local lb=$(echo "$ss" |sed -e "s/ /\/devel\n/g" | percol --query "$LBUFFER")
+#   local cmd="source "$lb"/setup.zsh"
+#   if [[ -e "$HOME/.zshrc_rosws" ]]; then
+#     rm -f $HOME/.zshrc_rosws
+#   fi
+#   echo $cmd > $HOME/.zshrc_rosws
+#   LBUFFER="${cmd}"
+# }
+#
+# zle -N load-catkin-workspace-percol
+# bindkey '^e' load-catkin-workspace-percol 
 
