@@ -1,0 +1,7 @@
+#include <iostream>
+
+int main(int argc, char* argv[])
+{
+  std::cout << "template." << std::endl;
+  return 0;
+}

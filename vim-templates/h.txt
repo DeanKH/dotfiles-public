@@ -1,0 +1,8 @@
+#ifndef __$HEADERNAME_H__
+#define __$HEADERNAME_H__
+
+namespace $NAME
+{
+
+} //end namespace
+#endif

@@ -38,7 +38,7 @@ autocmd ColorScheme * highlight LineNr ctermfg=35
 colorscheme monokai
 " colorscheme solarized 
 " colorscheme solarized8_dark
-syntax on
+syntax enable
 set t_Co=256
 set termguicolors
 let &colorcolumn=join(range(81,82),",")
@@ -52,24 +52,25 @@ autocmd BufNewFile,BufRead *.urdf setlocal filetype=xml.urdf
 autocmd BufNewFile,BufRead *.xacro setlocal filetype=xml.urdf
 autocmd BufNewFile,BufRead *.tex setlocal filetype=tex
 
+" 新規作成時のテンプレート設定
 autocmd BufNewFile, *.xacro 0r $HOME/.dotfiles/public/vim-templates/xml.txt
 autocmd BufNewFile, *.urdf 0r $HOME/.dotfiles/public/vim-templates/xml.txt
 autocmd BufNewFile, *.launch 0r $HOME/.dotfiles/public/vim-templates/launch.txt
 autocmd BufNewFile, *.py 0r $HOME/.dotfiles/public/vim-templates/python.txt
 autocmd FileType python setlocal completeopt-=preview
+autocmd BufNewFile, *.cpp 0r $HOME/.dotfiles/public/vim-templates/cpp.txt
+autocmd BufNewFile, *.h 0r $HOME/.dotfiles/public/vim-templates/h.txt
+autocmd BufNewFile, CMakeLists.txt 0r $HOME/.dotfiles/public/vim-templates/cmake.txt
 
 augroup fileTypeIndent
 	autocmd!
 	autocmd BufNewFile,BufRead *.md setlocal tabstop=4 autoindent expandtab softtabstop=4 shiftwidth=4 
 augroup END
 
-syntax enable 
-
-
 autocmd FileType denite set winblend=30
 autocmd FileType denite-filter set winblend=30
 
 "" deol
 " nnoremap <silent><C-o> :<C-u>Deol -split=floating<CR>
-tnoremap <ESC>  <C-\><C-n>
+" tnoremap <ESC>  <C-\><C-n>
 
