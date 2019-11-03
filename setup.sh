@@ -25,13 +25,7 @@ zshpath=$repopath"zshrcs/"
 create_sl $zshpath"common.zshrc" $distpath".zshrc_common"
 create_sl $zshpath"main.zshrc" $distpath".zshrc"
 create_sl $repopath"zpreztorc" $distpath".zpreztorc"
-
-#vim
-# vimpath=$repopath"vimrcs/"
-# create_sl $vimpath"clang.vimrc" $distpath".clang.vimrc"
-# create_sl $vimpath"vimrc" $distpath".vimrc"
-# create_sl $vimpath"neocomplete.vimrc" $distpath".neocomplete.vimrc"
-# create_sl $vimpath"dein.vimrc" $distpath".dein.vimrc"
+create_sl $repopath"zplugins/" $distpath".zplugins"
 
 #nvim
 nvimpath=$repopath"nvim"
