@@ -12,6 +12,16 @@ hook_add = '''
 '''
 
 [[plugins]]
+repo = 'Shougo/neosnippet.vim'
+hook_add = '''
+let g:deoplete#enable_at_startup = 1 
+let g:neosnippet#enable_snipmate_compatibility = 1
+let g:neosnippet#snippets_directory='~/.config/nvim/snippets'
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+'''
+
+[[plugins]]
 repo = 'roxma/nvim-yarp'
 [[plugins]]
 repo = 'roxma/vim-hug-neovim-rpc'
@@ -111,6 +121,9 @@ hook_add = '''
 repo = 'vim-airline/vim-airline'
 [[plugins]]
 repo = 'vim-airline/vim-airline-themes'
+hook_add = '''
+  let g:airline_theme = 'luna'
+'''
 [[plugins]]
 repo = 'w0ng/vim-hybrid'
 
@@ -171,13 +184,38 @@ repo = 'sickill/vim-monokai'
 
 [[plugins]]
 repo = 'cocopon/iceberg.vim'
-  
+
+[[plugins]]
+repo = 'morhetz/gruvbox'
+
+[[plugins]]
+repo = 'google/vim-colorscheme-primary'
+
 # [[plugins]]
 # repo = 'zchee/deoplete-clang'
 # hook_source='''
 # '''
 # on_ft = ['cmake']
 # depends = ['deoplete.nvim']
+
+[[plugins]]
+repo = 'kannokanno/previm'
+hook_add = '''
+let g:previm_open_cmd = 'open -a google-chrome'
+let g:previm_open_cmd
+'''
+
+[[plugins]]
+repo = 'alvan/vim-closetag'
+hook_add = '''
+let g:closetag_filenames = "*.xml,*.urdf,*.xacro"
+'''
+
+[[plugins]]
+repo = 'reireias/vim-cheatsheet'
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
 
 # Language Server Protocol 
 [[plugins]]
