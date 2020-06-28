@@ -1,22 +1,27 @@
 set number
-set nocompatible
+" encoding ---"
 set encoding=utf-8
-scriptencoding utf-8
+scriptencoding utf-8 " set encoding の後に記述すること
+
+" indent ---"
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
 set cindent
+
+" search ---"
+set ignorecase
+set smartcase
+set incsearch
+set hlsearch
+
 set showcmd
 set nobackup
 set clipboard=unnamed
 set infercase
 set showmatch
 set matchtime=1
-set ignorecase
-set smartcase
-set incsearch
-set hlsearch
 filetype plugin indent on
 set list
 set listchars=tab:»-,trail:-,extends:»,precedes:«,nbsp:%,eol:↲
@@ -33,11 +38,14 @@ autocmd ColorScheme * highlight LineNr ctermfg=35
 " colorscheme lucius
 " colorscheme lucario
 " colorscheme tender 
+colorscheme gruvbox 
+let g:gruvbox_contrast_dark="hard"
 " colorscheme monokai
 " colorscheme iceberg
-colorscheme monokai
+" colorscheme monokai
 " colorscheme solarized 
 " colorscheme solarized8_dark
+" colorscheme primary
 syntax enable
 set t_Co=256
 set termguicolors
