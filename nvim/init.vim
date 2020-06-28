@@ -74,3 +74,14 @@ autocmd FileType denite-filter set winblend=30
 " nnoremap <silent><C-o> :<C-u>Deol -split=floating<CR>
 " tnoremap <ESC>  <C-\><C-n>
 
+"" \+oで開いているadocファイルをブラウザで開く
+augroup fileTypeOpen
+	autocmd!
+  autocmd  BufNewFile,BufRead *.adoc nmap <silent> <buffer> <leader>o :!google-chrome %<CR>'
+augroup END
+
+" Alt+j/k でカレント行の入れ替え
+nnoremap <silent><A-k> :m .-2<CR>==
+nnoremap <silent><A-j> :m .+1<CR>==
+inoremap <silent><A-k> <Esc>:m .-2<CR>==
+inoremap <silent><A-j> <Esc>:m .+1<CR>==
