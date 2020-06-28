@@ -1,4 +1,4 @@
-# Shougo packages
+# Shougo's packages
 [[plugins]]
 repo = 'Shougo/dein.vim'
 [[plugins]]
@@ -9,7 +9,28 @@ let g:deoplete#enable_at_startup = 1
 [[plugins]]
 repo = 'Shougo/denite.nvim'
 hook_add = '''
+autocmd FileType denite call s:denite_my_settings()
+function! s:denite_my_settings() abort
+  nnoremap <silent><buffer><expr> <CR>
+  \ denite#do_map('do_action')
+  nnoremap <silent><buffer><expr> d
+  \ denite#do_map('do_action', 'delete')
+  nnoremap <silent><buffer><expr> p
+  \ denite#do_map('do_action', 'preview')
+  nnoremap <silent><buffer><expr> q
+  \ denite#do_map('quit')
+  nnoremap <silent><buffer><expr> i
+  \ denite#do_map('open_filter_buffer')
+  nnoremap <silent><buffer><expr> <Space>
+  \ denite#do_map('toggle_select').'j'
+endfunction
 '''
+
+[[plugins]]
+repo = 'Shougo/deol.nvim'
+
+[[plugins]]
+repo = 'Shougo/neoinclude.vim'
 
 [[plugins]]
 repo = 'roxma/nvim-yarp'
@@ -74,6 +95,7 @@ autocmd FileType defx call s:defx_my_settings()
      \ defx#do_action('change_vim_cwd')
     endfunction
 '''
+
 [[plugins]]
 repo = 'kristijanhusak/defx-icons'
 hook_add='''
@@ -92,8 +114,6 @@ let g:defx_icons_nested_closed_tree_icon = ''
 [[plugins]]
 repo = "ryanoasis/vim-devicons"
 
-[[plugins]]
-repo = 'Shougo/deol.nvim'
 
 [[plugins]]
 repo = 'ncm2/float-preview.nvim'
@@ -111,8 +131,6 @@ hook_add = '''
 repo = 'vim-airline/vim-airline'
 [[plugins]]
 repo = 'vim-airline/vim-airline-themes'
-[[plugins]]
-repo = 'w0ng/vim-hybrid'
 
 [[plugins]]
 repo = 'neovim/python-client'
@@ -129,55 +147,19 @@ repo = 'vim-jp/cpp-vim'
 on_ft = 'cpp'
 
 [[plugins]]
-repo = 'tomasr/molokai'
-[[plugins]]
-repo = 'jonathanfilip/vim-lucius'
-[[plugins]]
-repo = 'tomasr/molokai'
-[[plugins]]
-repo = 'raphamorim/lucario'
-[[plugins]]
-repo = 'jdkanani/vim-material-theme'
-[[plugins]]
-repo = 'jacoborus/tender.vim'
-[[plugins]]
 repo = 'tomtom/tcomment_vim'
 [[plugins]]
 repo = 'vim-latex/vim-latex'
-[[plugins]]
-repo = 'miyakogi/seiya.vim'
+
+
 [[plugins]]
 repo = 'rhysd/vim-clang-format'
-[[plugins]]
-repo = 'Shougo/neoinclude.vim'
-[[plugins]]
-repo = 'octol/vim-cpp-enhanced-highlight'
-hook_add='''
-let g:cpp_class_scope_highlight = 1
-let g:cpp_member_variable_highlight = 1
-let g:cpp_class_decl_highlight = 1
-let g:cpp_experimental_simple_template_highlight = 1
-let g:cpp_experimental_template_highlight = 1
-let g:cpp_concepts_highlight = 1
-'''
 [[plugins]]
 repo = 'dhruvasagar/vim-table-mode'
 on_ft = 'md'
 hook_add='''
 let g:table_mode_corner='|'
 '''
-[[plugins]]
-repo = 'sickill/vim-monokai'
-
-[[plugins]]
-repo = 'cocopon/iceberg.vim'
-  
-# [[plugins]]
-# repo = 'zchee/deoplete-clang'
-# hook_source='''
-# '''
-# on_ft = ['cmake']
-# depends = ['deoplete.nvim']
 
 # Language Server Protocol 
 [[plugins]]
@@ -202,3 +184,33 @@ hook_source = '''
 set completefunc=LanguageClient#complete
 '''
 
+# color scheme
+[[plugins]]
+repo = 'sickill/vim-monokai'
+[[plugins]]
+repo = 'cocopon/iceberg.vim'
+[[plugins]]
+repo = 'tomasr/molokai'
+[[plugins]]
+repo = 'w0ng/vim-hybrid'
+[[plugins]]
+repo = 'jonathanfilip/vim-lucius'
+[[plugins]]
+repo = 'raphamorim/lucario'
+[[plugins]]
+repo = 'jdkanani/vim-material-theme'
+[[plugins]]
+repo = 'jacoborus/tender.vim'
+[[plugins]]
+repo = 'miyakogi/seiya.vim'
+
+[[plugins]]
+repo = 'octol/vim-cpp-enhanced-highlight'
+hook_add='''
+let g:cpp_class_scope_highlight = 1
+let g:cpp_member_variable_highlight = 1
+let g:cpp_class_decl_highlight = 1
+let g:cpp_experimental_simple_template_highlight = 1
+let g:cpp_experimental_template_highlight = 1
+let g:cpp_concepts_highlight = 1
+'''
