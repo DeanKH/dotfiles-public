@@ -40,11 +40,11 @@ local target_path="${HOME}/.zshfuncs"
 }
 
 # Terminal起動時にtmuxを立ち上げる
-if [[ -z "$TMUX" ]]
-then 
-  tmux new-session;
-  exit;
-fi 
+# if [[ -z "$TMUX" ]]
+# then 
+#   tmux new-session;
+#   exit;
+# fi 
 
 # autoload commandの読込
 () {
