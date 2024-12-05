@@ -2,10 +2,11 @@
 HISTFILE="${HOME}/.zsh_history"
 HISTSIZE=1000000000
 SAVEHIST=1000000000
-export EDITOR=vim
+export EDITOR=nvim
 export XDG_CONFIG_HOME=$HOME/.config
 alias tmux='tmux -2'
-alias xcp='xclip -i -selection clipboard'
+# alias xcp='tr -d "\n" | xclip -i -selection clipboard'
+alias xcp='sed -z "s/\n$//" | xclip -i -selection clipboard'
 alias rm="trash"
 
 # about TEX
